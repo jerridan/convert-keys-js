@@ -1,5 +1,5 @@
 {
-  "name": "@jerridan/convert-keys-js",
+  "name": "@jerridan/convert-keys",
   "version": "1.0.0",
   "description": "A tool for converting JS objects between camel case and snake case",
   "main": "index.js",
