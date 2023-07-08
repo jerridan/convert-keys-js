@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@types/lodash.snakecase": "^4.1.7",
+    "prettier": "^3.0.0",
     "webpack": "^5.83.1",
     "webpack-cli": "^5.1.1"
   },
