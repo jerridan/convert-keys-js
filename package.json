@@ -1,14 +1,24 @@
 {
   "name": "@jerridan/convert-keys",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A tool for converting JS objects between camel case and snake case",
-  "main": "index.js",
+  "module": "src/index.ts",
   "repository": "git@github.com:jerridan/convert-keys-js.git",
   "author": "Jerridan Quiring <jerridan@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "lodash.camelcase": "^4.3.0",
     "lodash.isplainobject": "^4.0.6",
-    "lodash.snakecase": "^4.1.1"
+    "lodash.snakecase": "^4.1.1",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.4"
+  },
+  "devDependencies": {
+    "@types/lodash.snakecase": "^4.1.7",
+    "webpack": "^5.83.1",
+    "webpack-cli": "^5.1.1"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
   }
 }
