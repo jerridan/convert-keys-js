@@ -1,7 +1,7 @@
 import snakeCase from "lodash.snakecase";
 
-export function toSnakeCase(obj: any): any {
-  return Object.keys(obj).reduce((acc, key) => {
+export function toSnakeCase(obj: object): object {
+  return Object.keys(obj).reduce((acc, key: keyof object) => {
     if (typeof obj[key] === "object") {
       return { ...acc, [snakeCase(key)]: toSnakeCase(obj[key]) };
     }
