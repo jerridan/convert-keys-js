@@ -2,7 +2,7 @@
   "name": "@jerridan/convert-keys",
   "version": "0.1.0",
   "description": "A tool for converting JS objects between camel case and snake case",
-  "module": "src/index.ts",
+  "main": "dist/main.js",
   "repository": "git@github.com:jerridan/convert-keys-js.git",
   "author": "Jerridan Quiring <jerridan@gmail.com>",
   "license": "MIT",
