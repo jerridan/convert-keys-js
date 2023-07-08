@@ -9,7 +9,7 @@ const config = {
     library: {
       name: "convertKeys",
       type: "umd",
-    }
+    },
   },
   module: {
     rules: [
@@ -23,13 +23,7 @@ const config = {
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", "..."],
   },
+  mode: "production",
 };
 
-module.exports = () => {
-  if (isProduction) {
-    config.mode = "production";
-  } else {
-    config.mode = "development";
-  }
-  return config;
-};
+module.exports = config;
