@@ -20,4 +20,20 @@ describe("toSnakeCase", () => {
       },
     });
   });
+
+  it("converts keys of objects in arrays", () => {
+    expect(
+      toSnakeCase({
+        objectKey: [
+          { nestedKey: { deeplyNestedKey: "value" } },
+          { nestedKey: { deeplyNestedKey: "value" } },
+        ],
+      }),
+    ).toEqual({
+      object_key: [
+        { nested_key: { deeply_nested_key: "value" } },
+        { nested_key: { deeply_nested_key: "value" } },
+      ],
+    });
+  });
 });
