@@ -52,4 +52,8 @@ describe("toSnakeCase", () => {
   it("throws an error if the argument is not an object", () => {
     expect(() => toSnakeCase([])).toThrowError("Argument must be an object");
   });
+
+  it("handles an object with empty arrays", () => {
+    expect(toSnakeCase({ emptyArray: [] })).toEqual({ empty_array: [] });
+  });
 });
