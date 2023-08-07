@@ -26,13 +26,21 @@ describe("toSnakeCase", () => {
       toSnakeCase({
         objectKey: [
           { nestedKey: { deeplyNestedKey: "value" } },
-          { nestedKey: { deeplyNestedKey: "value" } },
+          {
+            nestedKey: {
+              deeplyNestedKey: [{ evenMoreDeeplyNestedKey: "value" }],
+            },
+          },
         ],
       }),
     ).toEqual({
       object_key: [
         { nested_key: { deeply_nested_key: "value" } },
-        { nested_key: { deeply_nested_key: "value" } },
+        {
+          nested_key: {
+            deeply_nested_key: [{ even_more_deeply_nested_key: "value" }],
+          },
+        },
       ],
     });
   });
