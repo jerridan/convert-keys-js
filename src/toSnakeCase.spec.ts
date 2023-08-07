@@ -44,4 +44,12 @@ describe("toSnakeCase", () => {
       ],
     });
   });
+
+  it("handles an empty object", () => {
+    expect(toSnakeCase({})).toEqual({});
+  });
+
+  it("throws an error if the argument is not an object", () => {
+    expect(() => toSnakeCase([])).toThrowError("Argument must be an object");
+  });
 });

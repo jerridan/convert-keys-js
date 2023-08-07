@@ -2,6 +2,10 @@ import snakeCase from "lodash.snakecase";
 import isPlainObject from "lodash.isplainobject";
 
 export function toSnakeCase(obj: object): object {
+  if (!isPlainObject(obj)) {
+    throw new Error("Argument must be an object");
+  }
+
   return Object.keys(obj).reduce((acc, key: keyof object) => {
     if (isPlainObject(obj[key])) {
       return { ...acc, [snakeCase(key)]: toSnakeCase(obj[key]) };
