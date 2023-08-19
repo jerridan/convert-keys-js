@@ -72,10 +72,30 @@ describe("toSnakeCase", () => {
   it.todo("handles double arrays");
 
   it("can accept key overrides", () => {
-    const overrides = { objectKey: "object_key1" };
+    const overrides = { objectKey: "overridden_key" };
 
     expect(toSnakeCase({ objectKey: "value" }, overrides)).toEqual({
-      object_key1: "value",
+      overridden_key: "value",
+    });
+  });
+
+  it("can override keys where the value is an array", () => {
+    const overrides = { objectKey: "overridden_key" };
+
+    expect(
+      toSnakeCase({ objectKey: [{ nestedKey: "value" }] }, overrides),
+    ).toEqual({
+      overridden_key: [{ nested_key: "value" }],
+    });
+  });
+
+  it("can override keys where the value is an object", () => {
+    const overrides = { objectKey: "overridden_key" };
+
+    expect(
+      toSnakeCase({ objectKey: { nestedKey: "value" } }, overrides),
+    ).toEqual({
+      overridden_key: { nested_key: "value" },
     });
   });
 

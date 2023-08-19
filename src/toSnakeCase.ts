@@ -32,7 +32,7 @@ export function toSnakeCase(obj: ObjToConvert, overrides?: Overrides): object {
 
       return {
         ...acc,
-        [snakeCase(key)]: convertedArray,
+        [convertKey(key, overrides)]: convertedArray,
       };
     }
 
