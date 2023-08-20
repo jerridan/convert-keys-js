@@ -20,7 +20,7 @@ const config = {
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".jsx", ".js", "..."],
+    extensions: [".tsx", ".ts", ".jsx", ".js"],
   },
   mode: "production",
 };
