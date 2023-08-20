@@ -10,7 +10,7 @@ type Overrides = {
 };
 
 export function toSnakeCase(obj: ObjToConvert, overrides?: Overrides): object {
-  return Object.keys(obj).reduce((acc, key: keyof object) => {
+  return Object.keys(obj).reduce((acc, key) => {
     const value = obj[key];
     if (isPlainObject(value)) {
       return {
