@@ -7,6 +7,18 @@ describe("toSnakeCase", () => {
     });
   });
 
+  it("converts objects with multiple keys", () => {
+    expect(
+      toSnakeCase({
+        objectKey: "value",
+        anotherObjectKey: "anotherValue",
+      }),
+    ).toEqual({
+      object_key: "value",
+      another_object_key: "anotherValue",
+    });
+  });
+
   it("converts nested keys", () => {
     expect(
       toSnakeCase({
