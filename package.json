@@ -28,6 +28,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "webpack --config webpack.config.js",
-    "test": "jest"
+    "test": "jest",
+    "check-types": "tsc --noEmit"
   }
 }
