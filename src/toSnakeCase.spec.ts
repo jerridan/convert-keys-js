@@ -33,7 +33,7 @@ describe("toSnakeCase", () => {
     });
   });
 
-  it("handles nested arrays", () => {
+  it("converts objects with nested arrays", () => {
     expect(
       toSnakeCase({
         objectKey: {
@@ -47,7 +47,7 @@ describe("toSnakeCase", () => {
     });
   });
 
-  it("converts keys of objects in arrays", () => {
+  it("converts keys of objects in nested arrays", () => {
     expect(
       toSnakeCase({
         objectKey: [
@@ -71,7 +71,7 @@ describe("toSnakeCase", () => {
     });
   });
 
-  it("handles nested arrays with some values being objects", () => {
+  it("converts nested arrays with different value types", () => {
     expect(
       toSnakeCase({
         objectKey: [{ nestedKey: { deeplyNestedKey: "value" } }, 1, 2, 3],
@@ -83,7 +83,7 @@ describe("toSnakeCase", () => {
 
   it.todo("handles double arrays");
 
-  it("can accept key overrides", () => {
+  it("accepts key overrides", () => {
     const overrides = { objectKey: "overridden_key" };
 
     expect(toSnakeCase({ objectKey: "value" }, overrides)).toEqual({
@@ -91,7 +91,7 @@ describe("toSnakeCase", () => {
     });
   });
 
-  it("can override keys where the value is an array", () => {
+  it("overrides keys where the value is an array", () => {
     const overrides = { objectKey: "overridden_key" };
 
     expect(
@@ -101,7 +101,7 @@ describe("toSnakeCase", () => {
     });
   });
 
-  it("can override keys where the value is an object", () => {
+  it("overrides keys where the value is an object", () => {
     const overrides = { objectKey: "overridden_key" };
 
     expect(
