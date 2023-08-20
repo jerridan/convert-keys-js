@@ -1,7 +1,7 @@
 import { toSnakeCase } from "./toSnakeCase";
 
 describe("toSnakeCase", () => {
-  it("converts object keys to camel case", () => {
+  it("converts object keys to snake case", () => {
     expect(toSnakeCase({ objectKey: "value" })).toEqual({
       object_key: "value",
     });
