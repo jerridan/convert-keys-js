@@ -61,6 +61,18 @@ describe("toSnakeCase", () => {
 
   it("handles multi-dimensional arrays", () => {
     expect(
+      toSnakeCase([
+        [{ nestedKey: 1 }, { nestedKey: 2 }],
+        [{ nestedKey: 3 }, { nestedKey: 4 }],
+      ]),
+    ).toEqual([
+      [{ nested_key: 1 }, { nested_key: 2 }],
+      [{ nested_key: 3 }, { nested_key: 4 }],
+    ]);
+  });
+
+  it("handles objects with multi-dimensional arrays", () => {
+    expect(
       toSnakeCase({
         objectKey: [
           [{ nestedKey: 1 }, { nestedKey: 2 }],
