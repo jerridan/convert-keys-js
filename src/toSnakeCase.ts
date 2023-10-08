@@ -1,7 +1,6 @@
 import isPlainObject from "lodash.isplainobject";
 import { Overrides, PlainObject, PlainArray } from "./types";
 import { convertKey } from "./convertKey";
-// import { snakeCaseArray, snakeCaseObject } from "./snakeCaseObject";
 
 export function toSnakeCase(
   structure: PlainObject | PlainArray,
