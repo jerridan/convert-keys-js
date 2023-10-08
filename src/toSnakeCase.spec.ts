@@ -119,7 +119,15 @@ describe("toSnakeCase", () => {
     expect(toSnakeCase({})).toEqual({});
   });
 
+  it("handles an empty array", () => {
+    expect(toSnakeCase([])).toEqual([]);
+  });
+
   it("handles an object with empty arrays", () => {
     expect(toSnakeCase({ emptyArray: [] })).toEqual({ empty_array: [] });
+  });
+
+  it("handles an array with empty objects", () => {
+    expect(toSnakeCase([{}])).toEqual([{}]);
   });
 });
