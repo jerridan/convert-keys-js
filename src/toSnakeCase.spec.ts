@@ -47,41 +47,45 @@ describe("toSnakeCase", () => {
     });
   });
 
-  it("converts keys of objects in nested arrays", () => {
+  it("converts arrays with nested objects", () => {
+    expect(
+      toSnakeCase([
+        { nestedKey: { deeplyNestedKey: "value" } },
+        { nestedKey: { deeplyNestedKey: "value" } },
+      ]),
+    ).toEqual([
+      { nested_key: { deeply_nested_key: "value" } },
+      { nested_key: { deeply_nested_key: "value" } },
+    ]);
+  });
+
+  it("handles multi-dimensional arrays", () => {
     expect(
       toSnakeCase({
         objectKey: [
-          { nestedKey: { deeplyNestedKey: "value" } },
-          {
-            nestedKey: {
-              deeplyNestedKey: [{ evenMoreDeeplyNestedKey: "value" }],
-            },
-          },
+          [{ nestedKey: 1 }, { nestedKey: 2 }],
+          [{ nestedKey: 3 }, { nestedKey: 4 }],
         ],
       }),
     ).toEqual({
       object_key: [
-        { nested_key: { deeply_nested_key: "value" } },
-        {
-          nested_key: {
-            deeply_nested_key: [{ even_more_deeply_nested_key: "value" }],
-          },
-        },
+        [{ nested_key: 1 }, { nested_key: 2 }],
+        [{ nested_key: 3 }, { nested_key: 4 }],
       ],
     });
   });
 
-  it("converts nested arrays with different value types", () => {
+  it("converts objects with different nested value types", () => {
     expect(
       toSnakeCase({
-        objectKey: [{ nestedKey: { deeplyNestedKey: "value" } }, 1, 2, 3],
+        objectKey1: [{ nestedKey: { deeplyNestedKey: "value" } }, 1, 2, 3],
+        objectKey2: { nestedKey: { deeplyNestedKey: "value" } },
       }),
     ).toEqual({
-      object_key: [{ nested_key: { deeply_nested_key: "value" } }, 1, 2, 3],
+      object_key_1: [{ nested_key: { deeply_nested_key: "value" } }, 1, 2, 3],
+      object_key_2: { nested_key: { deeply_nested_key: "value" } },
     });
   });
-
-  it.todo("handles double arrays");
 
   it("accepts key overrides", () => {
     const overrides = { objectKey: "overridden_key" };

@@ -1,49 +1,53 @@
-import snakeCase from "lodash.snakecase";
 import isPlainObject from "lodash.isplainobject";
+import { Overrides, PlainObject, PlainArray } from "./types";
+import { convertKey } from "./convertKey";
+// import { snakeCaseArray, snakeCaseObject } from "./snakeCaseObject";
 
-type ObjToConvert = {
-  [key: string]: unknown;
-};
+export function toSnakeCase(
+  structure: PlainObject | PlainArray,
+  overrides?: Overrides,
+): PlainObject | PlainArray {
+  if (isPlainObject(structure)) {
+    return snakeCaseObject(structure as PlainObject, overrides);
+  }
 
-type Overrides = {
-  [key: string]: string;
-};
+  if (Array.isArray(structure)) {
+    return snakeCaseArray(structure as PlainArray, overrides);
+  }
+}
 
-export function toSnakeCase(obj: ObjToConvert, overrides?: Overrides): object {
+function snakeCaseObject(
+  obj: PlainObject,
+  overrides?: Overrides,
+): PlainObject {
   return Object.keys(obj).reduce((acc, key) => {
-    const value = obj[key];
+    let value = obj[key];
+
     if (isPlainObject(value)) {
-      return {
-        ...acc,
-        [convertKey(key, overrides)]: toSnakeCase(
-          value as ObjToConvert,
-          overrides,
-        ),
-      };
+      value = snakeCaseObject(value as PlainObject, overrides);
     }
 
     if (Array.isArray(value)) {
-      const convertedArray = value.map((arrayItem) => {
-        if (isPlainObject(arrayItem)) {
-          return toSnakeCase(arrayItem, overrides);
-        }
-        return arrayItem;
-      });
-
-      return {
-        ...acc,
-        [convertKey(key, overrides)]: convertedArray,
-      };
+      value = snakeCaseArray(value as PlainArray, overrides);
     }
 
-    return { ...acc, [convertKey(key, overrides)]: obj[key] };
+    return { ...acc, [convertKey(key, overrides)]: value };
   }, {});
 }
 
-function convertKey(key: string, overrides?: Overrides): string {
-  if (overrides && overrides[key]) {
-    return overrides[key];
-  }
+function snakeCaseArray(
+  arr: PlainArray,
+  overrides?: Overrides,
+): PlainArray {
+  return arr.map((value) => {
+    if (isPlainObject(value)) {
+      return snakeCaseObject(value as PlainObject, overrides);
+    }
 
-  return snakeCase(key);
+    if (Array.isArray(value)) {
+      return snakeCaseArray(value as PlainArray, overrides);
+    }
+
+    return value;
+  });
 }
