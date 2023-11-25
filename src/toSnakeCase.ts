@@ -10,7 +10,10 @@ export function toSnakeCase(
     const obj = structure as PlainObject;
 
     return Object.keys(obj).reduce((acc, key) => {
-      const nestedValue = toSnakeCase(obj[key] as PlainObject | PlainArray);
+      const nestedValue = toSnakeCase(
+        obj[key] as PlainObject | PlainArray,
+        overrides,
+      );
       const snakeCasedKey = convertKey(key, overrides);
 
       return { ...acc, [snakeCasedKey]: nestedValue };
@@ -19,7 +22,7 @@ export function toSnakeCase(
 
   if (Array.isArray(structure)) {
     return structure.map((item) =>
-      toSnakeCase(item as PlainObject | PlainArray),
+      toSnakeCase(item as PlainObject | PlainArray, overrides),
     );
   }
 

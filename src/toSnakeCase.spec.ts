@@ -127,6 +127,26 @@ describe("toSnakeCase", () => {
     });
   });
 
+  it("overrides keys where the value is a nested object", () => {
+    const overrides = { nestedKey: "overridden_key" };
+
+    expect(
+      toSnakeCase({ objectKey: { nestedKey: "value" } }, overrides),
+    ).toEqual({
+      object_key: { overridden_key: "value" },
+    });
+  });
+
+  it("overrides keys where the value is an array of objects", () => {
+    const overrides = { nestedKey: "overridden_key" };
+
+    expect(
+      toSnakeCase({ objectKey: [{ nestedKey: "value" }] }, overrides),
+    ).toEqual({
+      object_key: [{ overridden_key: "value" }],
+    });
+  });
+
   it("handles an empty object", () => {
     expect(toSnakeCase({})).toEqual({});
   });
