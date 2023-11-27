@@ -2,7 +2,7 @@ import isPlainObject from "lodash.isplainobject";
 import { Overrides, PlainObject, PlainArray } from "./types";
 import ConvertKey from "./ConvertKey";
 
-export function toSnakeCase(
+export function toCamelCase(
   structure: PlainObject | PlainArray,
   overrides?: Overrides,
 ): PlainObject | PlainArray {
@@ -10,11 +10,11 @@ export function toSnakeCase(
     const obj = structure as PlainObject;
 
     return Object.keys(obj).reduce((acc, key) => {
-      const nestedValue = toSnakeCase(
+      const nestedValue = toCamelCase(
         obj[key] as PlainObject | PlainArray,
         overrides,
       );
-      const snakeCasedKey = ConvertKey.snakeCase(key, overrides);
+      const snakeCasedKey = ConvertKey.camelCase(key, overrides);
 
       return { ...acc, [snakeCasedKey]: nestedValue };
     }, {});
@@ -22,7 +22,7 @@ export function toSnakeCase(
 
   if (Array.isArray(structure)) {
     return structure.map((item) =>
-      toSnakeCase(item as PlainObject | PlainArray, overrides),
+      toCamelCase(item as PlainObject | PlainArray, overrides),
     );
   }
 
