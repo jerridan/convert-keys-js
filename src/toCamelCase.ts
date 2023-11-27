@@ -14,9 +14,9 @@ export function toCamelCase(
         obj[key] as PlainObject | PlainArray,
         overrides,
       );
-      const snakeCasedKey = ConvertKey.camelCase(key, overrides);
+      const convertedKey = ConvertKey.camelCase(key, overrides);
 
-      return { ...acc, [snakeCasedKey]: nestedValue };
+      return { ...acc, [convertedKey]: nestedValue };
     }, {});
   }
 

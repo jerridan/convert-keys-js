@@ -14,9 +14,9 @@ export function toKebabCase(
         obj[key] as PlainObject | PlainArray,
         overrides,
       );
-      const snakeCasedKey = ConvertKey.kebabCase(key, overrides);
+      const convertedKey = ConvertKey.kebabCase(key, overrides);
 
-      return { ...acc, [snakeCasedKey]: nestedValue };
+      return { ...acc, [convertedKey]: nestedValue };
     }, {});
   }
 

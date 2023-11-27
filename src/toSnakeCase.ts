@@ -14,9 +14,9 @@ export function toSnakeCase(
         obj[key] as PlainObject | PlainArray,
         overrides,
       );
-      const snakeCasedKey = ConvertKey.snakeCase(key, overrides);
+      const convertedKey = ConvertKey.snakeCase(key, overrides);
 
-      return { ...acc, [snakeCasedKey]: nestedValue };
+      return { ...acc, [convertedKey]: nestedValue };
     }, {});
   }
 
