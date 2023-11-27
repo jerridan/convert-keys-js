@@ -11,8 +11,8 @@
     "lodash.isplainobject": "4",
     "lodash.kebabcase": "4",
     "lodash.snakecase": "4",
-    "ts-loader": "9.4",
-    "typescript": "5.0"
+    "ts-loader": "9.5",
+    "typescript": "5.3"
   },
   "devDependencies": {
     "@types/jest": "29",
@@ -25,7 +25,7 @@
     "rimraf": "5",
     "ts-jest": "29",
     "ts-node": "10",
-    "webpack": "5.83",
+    "webpack": "5.89",
     "webpack-cli": "5.1"
   },
   "scripts": {
