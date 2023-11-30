@@ -13,7 +13,7 @@
     "declarationMap": true,
     "outDir": "dist",
     "rootDir": "src",
-    "isolatedModules": true,
+    "esModuleInterop": true,
   },
   "files": ["src/index.ts"]
 }
