@@ -1,14 +1,19 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
     "module": "commonjs",
     "target": "es6",
     "allowJs": false,
     "moduleResolution": "node",
+    "sourceMap": true,
+    "strict": true,
     "declaration": true,
-    "declarationDir": "dist",
-    "esModuleInterop": true
+    "declarationMap": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "isolatedModules": true,
   },
   "files": ["src/index.ts"]
 }
