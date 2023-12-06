@@ -1,8 +1,12 @@
 {
   "name": "@jerridan/convert-keys",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-beta.0",
   "description": "Convert key casing in nested JS objects and arrays ",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "repository": "git@github.com:jerridan/convert-keys-js.git",
   "author": "Jerridan Quiring <jerridan@gmail.com>",
   "license": "MIT",
