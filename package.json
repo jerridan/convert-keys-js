@@ -7,7 +7,10 @@
   "files": [
     "dist"
   ],
-  "repository": "git@github.com:jerridan/convert-keys-js.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jerridan/convert-keys-js.git"
+  },
   "author": "Jerridan Quiring <jerridan@gmail.com>",
   "license": "MIT",
   "dependencies": {
