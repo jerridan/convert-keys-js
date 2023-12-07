@@ -1,12 +1,12 @@
-# convert-keys-js
+# ConvertKeys
 
-`convert-keys` is a package that provides functions to change the letter casing on object keys. It can handle objects and arrays, converting any deeply-nested keys. Whether an array or an object is passed in, it ensures that all keys in the structure are converted accordingly. The package includes three functions: `toSnakeCase`, `toCamelCase`, and `toKebabCase`, each of which accepts a structure to convert and an optional mapping of `overrides` for specific key conversions.
+`ConvertKeys` is a package that provides functions to change the letter casing on object keys. It can handle objects and arrays, converting any deeply-nested keys. Whether an array or an object is passed in, it ensures that all keys in the structure are converted accordingly. The package includes three functions: `toSnakeCase`, `toCamelCase`, and `toKebabCase`, each of which accepts a structure to convert and an optional mapping of `overrides` for specific key conversions.
 
 This project was written in TypeScript.
 
 ## Installation
 
-Install `convert-keys` via npm or yarn:
+Install `ConvertKeys` via npm or yarn:
 
 ```bash
 npm install @jerridan/convert-keys
