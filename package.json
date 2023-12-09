@@ -1,7 +1,7 @@
 {
   "name": "@jerridan/convert-keys",
   "version": "1.0.0",
-  "description": "Convert key casing in nested JS objects and arrays ",
+  "description": "A tool for converting object keys between camel case, snake case and kebab case.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
