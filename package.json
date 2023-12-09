@@ -1,6 +1,6 @@
 {
   "name": "@jerridan/convert-keys",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0",
   "description": "Convert key casing in nested JS objects and arrays ",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -33,12 +33,14 @@
     "ts-jest": "29",
     "ts-node": "10",
     "webpack": "5.89",
+    "webpack-bundle-analyzer": "^4.10.1",
     "webpack-cli": "5.1"
   },
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "webpack --config webpack.config.js",
     "test": "jest",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "analyze": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json"
   }
 }
