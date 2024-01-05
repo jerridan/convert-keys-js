@@ -40,4 +40,11 @@ describe("isPlainObject", () => {
   it("returns false for undefined", () => {
     expect(isPlainObject(undefined)).toEqual(false);
   });
+
+  it("returns false for classes and class instances", () => {
+    class Test {}
+
+    expect(isPlainObject(Test)).toEqual(false);
+    expect(isPlainObject(new Test())).toEqual(false);
+  });
 });
