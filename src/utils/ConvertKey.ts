@@ -1,7 +1,7 @@
 import lodashCamelCase from "lodash.camelcase";
 import lodashKebabCase from "lodash.kebabcase";
 import lodashSnakeCase from "lodash.snakecase";
-import { Overrides } from "./types";
+import { Overrides } from "../types";
 
 function camelCase(key: string, overrides?: Overrides): string {
   if (overrides && overrides[key]) {
