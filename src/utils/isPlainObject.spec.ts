@@ -24,4 +24,12 @@ describe("isPlainObject", () => {
     expect(isPlainObject(1)).toBe(false);
     expect(isPlainObject(true)).toBe(false);
   });
+
+  it("returns false for null", () => {
+    expect(isPlainObject(null)).toBe(false);
+  });
+
+  it("returns false for undefined", () => {
+    expect(isPlainObject(undefined)).toBe(false);
+  });
 });
