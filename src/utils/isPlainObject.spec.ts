@@ -14,4 +14,14 @@ describe("isPlainObject", () => {
     expect(isPlainObject([])).toBe(false);
     expect(isPlainObject([1, 2])).toBe(false);
   });
+
+  it("returns false for functions", () => {
+    expect(isPlainObject(() => {})).toBe(false);
+  });
+
+  it("returns false for primitives", () => {
+    expect(isPlainObject("string")).toBe(false);
+    expect(isPlainObject(1)).toBe(false);
+    expect(isPlainObject(true)).toBe(false);
+  });
 });
