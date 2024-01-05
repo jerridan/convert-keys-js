@@ -47,4 +47,8 @@ describe("isPlainObject", () => {
     expect(isPlainObject(Test)).toEqual(false);
     expect(isPlainObject(new Test())).toEqual(false);
   });
+
+  it("returns false for errors", () => {
+    expect(isPlainObject(new Error())).toEqual(false);
+  });
 });
