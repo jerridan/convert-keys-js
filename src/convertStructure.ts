@@ -1,4 +1,4 @@
-import isPlainObject from "lodash.isplainobject";
+import { isPlainObject } from "./utils/isPlainObject";
 import { Overrides, PlainObject, PlainArray } from "./types";
 
 export function convertStructure(

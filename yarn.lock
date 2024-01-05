@@ -769,13 +769,6 @@
   dependencies:
     "@types/lodash" "*"
 
-"@types/lodash.isplainobject@4":
-  version "4.0.9"
-  resolved "https://registry.yarnpkg.com/@types/lodash.isplainobject/-/lodash.isplainobject-4.0.9.tgz#3e0159c1598d96af2372151ed65f2792b61787e4"
-  integrity sha512-QC8nKcap5hRrbtIaPRjUMlcXXnLeayqQZPSaWJDx3xeuN17+2PW5wkmEJ4+lZgNnQRlSPzxjTYKCfV1uTnPaEg==
-  dependencies:
-    "@types/lodash" "*"
-
 "@types/lodash.kebabcase@4":
   version "4.1.9"
   resolved "https://registry.yarnpkg.com/@types/lodash.kebabcase/-/lodash.kebabcase-4.1.9.tgz#48d3df753b89499e75eba5e017979b560d69df85"
@@ -2366,11 +2359,6 @@ lodash.camelcase@4:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
   integrity sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==
-
-lodash.isplainobject@4:
-  version "4.0.6"
-  resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
-  integrity sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==
 
 lodash.kebabcase@4:
   version "4.1.1"
