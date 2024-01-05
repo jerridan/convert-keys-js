@@ -1,5 +1,5 @@
 import { Overrides, PlainObject, PlainArray } from "./types";
-import ConvertKey from "./ConvertKey";
+import ConvertKey from "./utils/ConvertKey";
 import { convertStructure } from "./convertStructure";
 
 export function toCamelCase(
