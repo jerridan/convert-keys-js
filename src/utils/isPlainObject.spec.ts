@@ -14,6 +14,10 @@ describe("isPlainObject", () => {
     expect(isPlainObject(Object.create({ a: 1 }))).toBe(false);
   });
 
+  it("returns true for objects with a valueOf method", () => {
+    expect(isPlainObject({ valueOf: 0 })).toBe(true);
+  });
+
   it("returns false for arrays", () => {
     expect(isPlainObject([])).toBe(false);
     expect(isPlainObject([1, 2])).toBe(false);
