@@ -15,7 +15,6 @@
   "license": "MIT",
   "dependencies": {
     "lodash.camelcase": "4",
-    "lodash.isplainobject": "4",
     "lodash.kebabcase": "4",
     "lodash.snakecase": "4",
     "ts-loader": "9.5",
@@ -24,7 +23,6 @@
   "devDependencies": {
     "@types/jest": "29",
     "@types/lodash.camelcase": "4",
-    "@types/lodash.isplainobject": "4",
     "@types/lodash.kebabcase": "4",
     "@types/lodash.snakecase": "4",
     "jest": "29",
