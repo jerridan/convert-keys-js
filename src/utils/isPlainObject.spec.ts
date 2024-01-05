@@ -10,6 +10,10 @@ describe("isPlainObject", () => {
     expect(isPlainObject({ constructor: 1 })).toBe(true);
   });
 
+  it("returns false for objects with a prototype", () => {
+    expect(isPlainObject(Object.create({ a: 1 }))).toBe(false);
+  });
+
   it("returns false for arrays", () => {
     expect(isPlainObject([])).toBe(false);
     expect(isPlainObject([1, 2])).toBe(false);
