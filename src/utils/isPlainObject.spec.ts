@@ -10,8 +10,12 @@ describe("isPlainObject", () => {
     expect(isPlainObject({ constructor: 1 })).toEqual(true);
   });
 
-  it("returns false for objects with a prototype", () => {
+  it("returns false for objects with a custom prototype", () => {
     expect(isPlainObject(Object.create({ a: 1 }))).toEqual(false);
+  });
+
+  it("returns true for objects with a null prototype", () => {
+    expect(isPlainObject(Object.create(null))).toEqual(true);
   });
 
   it("returns true for objects with a valueOf method", () => {
