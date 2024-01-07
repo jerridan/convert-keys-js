@@ -17,7 +17,6 @@
     "lodash.camelcase": "4",
     "lodash.kebabcase": "4",
     "lodash.snakecase": "4",
-    "ts-loader": "9.5",
     "typescript": "5.3"
   },
   "devDependencies": {
@@ -29,6 +28,7 @@
     "prettier": "3",
     "rimraf": "5",
     "ts-jest": "29",
+    "ts-loader": "9.5",
     "ts-node": "10",
     "webpack": "5.89",
     "webpack-bundle-analyzer": "^4.10.1",
