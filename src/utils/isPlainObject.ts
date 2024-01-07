@@ -1,5 +1,5 @@
 export function isPlainObject(value: any) {
   if (!value) return false;
 
-  return Object.getPrototypeOf(value) === Object.prototype;
+  return [null, Object.prototype].includes(Object.getPrototypeOf(value));
 }
