@@ -17,6 +17,12 @@ Logs are organized according to [Keep a Changelog](https://keepachangelog.com/en
 
 ### Security
 
+## [1.1.0] - 2024-01-07
+
+### Changed
+
+- Removed dependency on `lodash.isplainobject` in favour of custom utility
+
 ## [1.0.0] - 2023-12-07
 
 ### Added
